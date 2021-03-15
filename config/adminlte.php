@@ -245,6 +245,7 @@ return [
             'text'        => 'Kelola Sepatu',
             'url'         => 'kelola_sepatu',
             'icon'        => 'fa fa-book',
+            'can'         => 'isAdmin',
         ],
         ['header' => 'account_settings'],
         [

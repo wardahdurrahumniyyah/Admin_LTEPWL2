@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +21,7 @@ Auth::routes();
 
 Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin/home', [AdminController::class, 'index'])
+->name('admin.home')
+->middleware('is_admin');
