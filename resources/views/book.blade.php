@@ -16,7 +16,7 @@
                        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#tambahBukuModal"><i class="fa fa-plus"></i> Tambah Data</button>
                     </div>
                    <div class="card-body">
-                       <table id="table-data" class="table table-borderer">
+                       <table id="table-data" class="table table-borderer display nowrap" style="width:100%">
                            <thead>
                                <tr>
                                    <th>NO</th>
@@ -81,7 +81,7 @@
               </div>
               <div class="form-group">
                   <label for="tahun">Tahun</label>
-                  <input type="year" class="form-control" name="tahun" id="tahun" required/>
+                  <input min="1" type="number" id="datepicker"class="form-control" name="tahun" id="tahun" required/>
               </div>
               <div class="form-group">
                   <label for="penerbit">Penerbit</label>
@@ -127,7 +127,7 @@
                   </div>
                   <div class="form-group">
                       <label for="edit-tahun">Tahun</label>
-                      <input type="year" class="form-control" name="tahun" id="edit-tahun" required/>
+                      <input min="1" type="number" id="datepicker" class="form-control" name="tahun" id="edit-tahun" required/>
                   </div>
                   <div class="form-group">
                       <label for="edit-penerbit">Penerbit</label>
@@ -183,6 +183,11 @@
 @section('js')
     <script> 
         $(function(){
+            $("#datepicker").datepicker( {
+                format: "yyyy", // Notice the Extra space at the beginning
+                viewMode: "years", 
+                minViewMode: "years"
+            });
             $(document).on('click', '#btn-delete-buku', function(){
                 let id = $(this).data('id');
                 let cover = $(this).data('cover');
