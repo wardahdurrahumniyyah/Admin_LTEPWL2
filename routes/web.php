@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('admin/home', [AdminController::class, 'index'])
 ->name('admin.home')
 ->middleware('is_admin');
+
+Route::get('admin/books', [BookController::class, 'index'])
+->name('admin.books')
+->middleware('is_admin');
+
+Route::post('admin/books', [BookController::class, 'store'])
+	->name('admin.book.submit')
+	->middleware('is_admin');
+Route::patch('admin/books/update', [BookController::class, 'update'])
+    ->name('admin.book.update')
+    ->middleware('is_admin');
+
+Route::get('admin/ajaxadmin/dataBuku/{id}', [BookController::class, 'getDataBuku']);
+Route::delete('admin/books/delete', [BookController::class, 'destroy'])
+          ->name('admin.book.delete')
+          ->middleware('is_admin');
