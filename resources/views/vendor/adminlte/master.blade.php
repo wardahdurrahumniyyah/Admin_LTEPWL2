@@ -112,10 +112,10 @@
 
     <!-- Toastr -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    
+
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
-    
+
     <script>
         @if(Session::has('message'))
         var type = "{{Session::get('alert-type')}}";
@@ -139,12 +139,11 @@
             toastr.error("{{ $errors }}");
         @endif
 
-        $('#table-data').DataTable({"scrollX": true});
-       
+        $('#table-data').DataTable();
         let baseurl = "<?=url('/')?>";
         let fullURL = "<?=url()->full()?>";
-
     </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
