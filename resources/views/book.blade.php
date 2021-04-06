@@ -9,7 +9,7 @@
 @section('content')
    <div class="container">
        <div class="row justify-content-center">
-           <div class="col-md-12">
+           <div class="col-md-10">
                <div class="card">
                    <div class="card-header">
                        {{ __('Pengelolaan Buku') }}
@@ -216,7 +216,7 @@
 
                         if (res.cover !== null) {
                             $('#image-area').append(
-                                "<img src='"+baseurl+"/storage/cover_buku/"+res.cover+"' width='100px'/>"
+                                "<img src='"+baseurl+"/storage/cover_buku/"+res.cover+"' width='200px'/>"
                             );
                         } else {
                             $('#image-area').append('[Gambar tidak tersedia]');
