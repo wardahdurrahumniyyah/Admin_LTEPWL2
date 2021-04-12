@@ -9,14 +9,15 @@
 @section('content')
    <div class="container">
        <div class="row justify-content-center">
-           <div class="col-md-10">
+           <div class="col-md-12">
                <div class="card">
                    <div class="card-header">
-                       {{ __('Pengelolaan Buku') }}
-                       <button class="btn btn-primary float-right" data-toggle="modal" data-target="#tambahBukuModal"><i class="fa fa-plus"></i> Tambah Data</button>
-                        
-                        <a href="{{ route('admin.print.books') }}" target="_blank" class="btn btn-secondary float-right"><i class="fa fa-print"></i> Cetak PDF</a>
-                        <hr/>
+                       {{ __('Pengelolaan Buku') }} <br><hr/>
+
+
+                       <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBukuModal"><i class="fa fa-plus"></i> Tambah Data</button>
+
+                        <a href="{{ route('admin.print.books') }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i> Cetak PDF</a>
 
                     </div>
                    <div class="card-body">
@@ -237,5 +238,4 @@
 
     </script>
 @stop
-
 
